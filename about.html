@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -7,61 +8,243 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>About | GAME TECH</title>
+    <title>About - GAME TECH</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<body class="about-page">
 
-<body style="padding:40px; overflow:auto;">
+    <div class="about-container">
 
-    <h1>About This Project</h1>
+        <h1>GAME TECH – 3D Controller Showcase</h1>
 
-    <p>
-        This project is an interactive 3D web application developed using
-        HTML5, CSS3, JavaScript and Three.js.
+        <h2>Introduction</h2>
+
+        <p>
+            This project is an interactive Web 3D application developed using
+            HTML5, CSS3, JavaScript and Three.js. The application was designed
+            to showcase multiple gaming controller models inside a responsive
+            browser-based environment using real-time WebGL rendering.
+         </p>
+
+        <p>
+            The purpose of the application is to demonstrate the integration
+            of modern frontend web technologies with interactive 3D graphics.
+            Users can dynamically switch between multiple controller models,
+            interact with lighting systems, activate wireframe rendering and
+            rotate objects within the scene.
+        </p>
+
+        <p>
+            The project combines several important areas of multimedia
+            development including 3D modelling, responsive web design,
+            JavaScript interaction systems and browser rendering pipelines.
+            Blender was used to create and export the controller models while
+            Three.js handled the rendering and interaction systems.
+        </p>
+
+        <p>
+            The application was designed to simulate a modern product showcase
+            environment where users can explore multiple 3D gaming devices
+            interactively through a clean and accessible user interface.
+        </p>
+
+
+        <h2>Project Aim</h2>
+
+        <p>
+            The main aim of this project was to design and develop an
+            immersive and responsive 3D web application that demonstrates
+            interactive graphics rendering using WebGL technologies.
+        </p>
+
+        <p>
+            The application focuses on combining 3D modelling, user
+            interface design and browser-based interaction into a single
+            integrated experience.
+        </p>
+
+
+
+        <h2>3D Modelling Process</h2>
+
+        <p>
+    Blender was used to design and modify multiple gaming controller
+    models including PlayStation, Xbox and Nintendo Wii inspired
+    designs. Each model was developed separately to ensure visual
+    distinction between the controller types and to satisfy the project
+    requirement for multiple original 3D assets.
+</p>
+
+<p>
+    The modelling workflow involved polygon modelling techniques,
+    object scaling, edge refinement and surface smoothing to create
+    cleaner geometry and improved rendering quality. Additional
+    adjustments were made to button placement, grip structures and
+    overall silhouette designs in order to create visually unique
+    controllers.
+</p>
+
+<p>
+    Materials and shading systems were prepared within Blender before
+    exporting the final assets into GLB format. The GLB format was
+    selected because it provides efficient compression, material
+    support and browser compatibility for WebGL applications.
+</p>
+
+<p>
+    The final models were optimized to reduce unnecessary polygon
+    counts while maintaining sufficient detail for interactive
+    rendering within the browser environment.
+</p>
+
+        <img src="screenshots/homepage.png" alt="Homepage Screenshot">
+
+
+
+        <h2>Three.js Implementation</h2>
+
+        <p>
+        Three.js was used as the primary JavaScript library for rendering
+        the 3D environment and interactive controller models. The library
+        provided the WebGL rendering pipeline, scene management system,
+        lighting controls and animation framework required for the
+        application.
     </p>
 
-    <h2>3D Modelling Workflow</h2>
-
     <p>
-        The 3D controller models were created and exported from Blender
-        using the glTF (.glb) format.
+        GLTFLoader was implemented to dynamically import GLB models into
+        the scene. This allowed the application to switch between multiple
+        controller models through user interaction buttons without
+        refreshing the page.
     </p>
 
-    <h2>Technologies Used</h2>
-
-    <ul>
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>JavaScript</li>
-        <li>Three.js</li>
-        <li>Blender</li>
-    </ul>
-
-    <h2>Accessibility</h2>
-
     <p>
-        High contrast colours, responsive layouts and interactive buttons
-        were used to improve accessibility and usability.
+        OrbitControls were integrated to allow users to rotate and inspect
+        the controllers from multiple viewpoints. This created a more
+        immersive and interactive user experience compared to static image
+        rendering.
     </p>
 
-    <h2>Testing</h2>
-
     <p>
-        The application was tested in modern desktop browsers to ensure
-        responsive behaviour and correct 3D rendering.
+        Additional JavaScript systems were implemented for animation,
+        lighting toggles, wireframe rendering and responsive browser
+        resizing. These features collectively enhanced the realism and
+        usability of the application.
     </p>
 
-    <h2>Deeper Understanding Features</h2>
 
-    <ul>
-        <li>Dynamic 3D model loading</li>
-        <li>Wireframe rendering mode</li>
-        <li>Interactive lighting controls</li>
-        <li>JavaScript animation system</li>
-        <li>MVC-inspired architecture</li>
-    </ul>
+
+        <h2>MVC Structure</h2>
+
+        <p>
+            The project follows a lightweight MVC-inspired structure.
+        </p>
+
+        <p>
+            The Model layer consists of the GLB 3D assets and related
+            data. The View layer is represented by HTML and CSS user
+            interface components. The Controller layer is implemented
+            using JavaScript logic inside app.js.
+        </p>
+
+
+
+        <h2>User Interaction Features</h2>
+
+        <ul>
+
+            <li>3D model switching system</li>
+
+            <li>Wireframe rendering mode</li>
+
+            <li>Lighting controls</li>
+
+            <li>Orbit camera interaction</li>
+
+            <li>Responsive layout system</li>
+
+            <li>Floating animation effects</li>
+
+        </ul>
+
+        <img src="screenshots/wireframe.png" alt="Wireframe Screenshot">
+
+
+
+        <h2>Testing and Evaluation</h2>
+
+        <p>
+    The application was tested using multiple modern desktop browsers
+    including Google Chrome and Microsoft Edge. Testing focused on
+    rendering stability, responsive layout behaviour, animation
+    consistency and user interaction systems.
+</p>
+
+<p>
+    Several interaction systems were verified during testing including
+    model switching, wireframe rendering, lighting controls and object
+    rotation. Browser resizing was also tested to ensure that the
+    Three.js renderer correctly updated the camera aspect ratio and
+    viewport dimensions.
+</p>
+
+<p>
+    Performance testing demonstrated that the optimized GLB models
+    loaded efficiently without significant lag or rendering issues.
+    The final application maintained stable frame rendering throughout
+    user interaction and animation sequences.
+</p>
+
+<p>
+    Minor development challenges included material rendering problems,
+    incorrect lighting behaviour and model positioning issues.
+    These problems were resolved through adjustments to material
+    configuration, lighting intensity and object centering systems.
+</p>
+
+        <img src="screenshots/about-page.png" alt="About Page Screenshot">
+
+
+
+        <h2>GitHub Repository</h2>
+
+        <p>
+            The complete source code and 3D assets are available on GitHub.
+        </p>
+
+        <a href="https://github.com/afariya/Game-Controller" target="_blank">
+
+            View GitHub Repository
+
+        </a>
+<h2>Future Improvements</h2>
+
+<p>
+    Future development could include more advanced GLSL shader systems,
+    improved texture mapping, animated controller components and
+    database integration using PHP and SQLite.
+</p>
+
+<p>
+    Additional enhancements may also include mobile optimization,
+    advanced post-processing effects, audio integration and improved
+    accessibility support for keyboard-only navigation.
+</p>
+
+
+        <h2>Conclusion</h2>
+
+        <p>
+            This project successfully demonstrates the integration of
+            interactive WebGL graphics, responsive web technologies and
+            real-time 3D interaction within a browser environment.
+        </p>
+
+    </div>
 
 </body>
 

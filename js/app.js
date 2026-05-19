@@ -68,7 +68,7 @@ let wireframeEnabled = false;
 
 
 
-// LOADER
+// GLTF LOADER
 const loader = new THREE.GLTFLoader();
 
 
@@ -116,42 +116,73 @@ function loadModel(modelPath){
 
                 if(child.isMesh){
 
-                    let material = new THREE.MeshStandardMaterial({
-
-                        color:0x444444,
-
-                        metalness:0.5,
-
-                        roughness:0.4
-
-                    });
+                    let material;
 
 
 
-                    // BUTTON COLORS
-                    const name = child.name.toLowerCase();
+                    // PLAYSTATION CONTROLLER
+                    if(modelPath.includes("controller1")){
 
+                        material = new THREE.MeshStandardMaterial({
 
+                            color:0x2f2f2f,
 
-                    if(name.includes("button")){
+                            metalness:0.5,
 
-                        material.color.set(0x0066ff);
+                            roughness:0.4
+
+                        });
 
                     }
 
 
 
-                    if(name.includes("stick")){
+                    // XBOX CONTROLLER
+                    else if(modelPath.includes("controller2")){
 
-                        material.color.set(0xcfcfcf);
+                        material = new THREE.MeshStandardMaterial({
+
+                            color:0x107c10,
+
+                            metalness:0.6,
+
+                            roughness:0.3
+
+                        });
 
                     }
 
 
 
-                    if(name.includes("trigger")){
+                    // WII CONTROLLER
+                    else if(modelPath.includes("controller3")){
 
-                        material.color.set(0x222222);
+                        material = new THREE.MeshStandardMaterial({
+
+                            color:0xf5f5f5,
+
+                            metalness:0.2,
+
+                            roughness:0.6
+
+                        });
+
+                    }
+
+
+
+                    // CLASSIC CONTROLLER
+                    else{
+
+                        material = new THREE.MeshStandardMaterial({
+
+                            color:0x444444,
+
+                            metalness:0.5,
+
+                            roughness:0.4
+
+                        });
 
                     }
 
@@ -186,28 +217,65 @@ function loadModel(modelPath){
 
 
 // LOAD DEFAULT MODEL
-loadModel('models/controller.glb');
+loadModel('models/controller1.glb');
 
 
 
-// MODEL BUTTONS
+// PLAYSTATION CONTROLLER
 document.getElementById("controller1Btn").addEventListener("click", ()=>{
-
-    loadModel('models/controller.glb');
-
-});
-
-
-document.getElementById("controller2Btn").addEventListener("click", ()=>{
 
     loadModel('models/controller1.glb');
 
+    document.getElementById("model-title").innerText =
+    "PlayStation Controller";
+
+    document.getElementById("model-description").innerText =
+    "A modern PlayStation-inspired controller featuring symmetrical analog sticks and ergonomic gaming controls.";
+
 });
 
 
-document.getElementById("controller3Btn").addEventListener("click", ()=>{
+
+// XBOX CONTROLLER
+document.getElementById("controller2Btn").addEventListener("click", ()=>{
 
     loadModel('models/controller2.glb');
+
+    document.getElementById("model-title").innerText =
+    "Xbox Controller";
+
+    document.getElementById("model-description").innerText =
+    "An Xbox-inspired controller with asymmetrical thumbsticks and a competitive gaming design.";
+
+});
+
+
+
+// WII CONTROLLER
+document.getElementById("controller3Btn").addEventListener("click", ()=>{
+
+    loadModel('models/controller3.glb');
+
+    document.getElementById("model-title").innerText =
+    "Nintendo Wii Controller";
+
+    document.getElementById("model-description").innerText =
+    "A Nintendo Wii-inspired controller designed around a simple remote-style interaction system.";
+
+});
+
+
+
+// CLASSIC CONTROLLER
+document.getElementById("controller4Btn").addEventListener("click", ()=>{
+
+    loadModel('models/controller4.glb');
+
+    document.getElementById("model-title").innerText =
+    "Classic Controller";
+
+    document.getElementById("model-description").innerText =
+    "The original custom-designed controller concept developed for the 3D application.";
 
 });
 
@@ -262,17 +330,27 @@ function animate(){
 
     controls.update();
 
+
+
+    // ROTATION
     if(controllerModel && rotateModel){
 
         controllerModel.rotation.y += 0.01;
 
     }
-if(controllerModel){
 
-    controllerModel.position.y =
-    1 + Math.sin(Date.now() * 0.0015) * 0.2;
 
-}
+
+    // FLOATING ANIMATION
+    if(controllerModel){
+
+        controllerModel.position.y =
+        1 + Math.sin(Date.now() * 0.0015) * 0.2;
+
+    }
+
+
+
     renderer.render(scene,camera);
 
 }
@@ -290,4 +368,9 @@ window.addEventListener('resize', ()=>{
 
     renderer.setSize(window.innerWidth, window.innerHeight);
 
-});S
+});
+$("button").click(function(){
+
+    $(this).fadeOut(100).fadeIn(100);
+
+});
