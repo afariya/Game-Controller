@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GAME TECH | 3D Controller Showcase</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+
+            <h1>GAME TECH</h1>
+
+            <p>Immersive 3D Controller Showcase</p>
+
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- UI PANEL -->
+    <div id="ui-panel">
+
+        <button id="controller1Btn">Classic Controller</button>
+
+        <button id="controller2Btn">RGB Controller</button>
+
+        <button id="controller3Btn">Pro Controller</button>
+
+        <hr>
+
+        <button id="rotateBtn">Rotate Model</button>
+
+        <button id="wireframeBtn">Wireframe Mode</button>
+
+        <button id="lightBtn">Toggle Light</button>
+
+    </div>
+
+
+
+    <!-- THREE JS CONTAINER -->
+    <div id="container"></div>
+
+
+
+    <!-- THREE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+
+
+    <!-- MVC JS FILES -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
