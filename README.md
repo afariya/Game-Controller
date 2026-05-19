@@ -65,3 +65,16 @@ GameController/
 │   └── controller2.blend
 │
 └── README.md
+## Screenshots
+
+### Homepage
+Interactive Three.js controller showcase interface.
+
+### Wireframe Mode
+Wireframe rendering demonstrating 3D geometry structure.
+
+### About Page
+Project documentation and development workflow.
+
+### GitHub Repository
+Version control and project structure.

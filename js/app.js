@@ -267,7 +267,12 @@ function animate(){
         controllerModel.rotation.y += 0.01;
 
     }
+if(controllerModel){
 
+    controllerModel.position.y =
+    1 + Math.sin(Date.now() * 0.0015) * 0.2;
+
+}
     renderer.render(scene,camera);
 
 }
