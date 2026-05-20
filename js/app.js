@@ -236,7 +236,7 @@ document.getElementById("controller1Btn").addEventListener("click", ()=>{
 
 
 
-// XBOX CONTROLLER
+// WII CONTROLLER
 document.getElementById("controller2Btn").addEventListener("click", ()=>{
 
     loadModel('models/controller2.glb');
@@ -251,25 +251,11 @@ document.getElementById("controller2Btn").addEventListener("click", ()=>{
 
 
 
-// WII CONTROLLER
+
+// // XBOX CONTROLLER
 document.getElementById("controller3Btn").addEventListener("click", ()=>{
 
     loadModel('models/controller3.glb');
-
-    document.getElementById("model-title").innerText =
-    "Nintendo Wii Controller";
-
-    document.getElementById("model-description").innerText =
-    "A Nintendo Wii-inspired controller designed around a simple remote-style interaction system.";
-
-});
-
-
-
-// CLASSIC CONTROLLER
-document.getElementById("controller4Btn").addEventListener("click", ()=>{
-
-    loadModel('models/controller4.glb');
 
     document.getElementById("model-title").innerText =
     "Classic Controller";
