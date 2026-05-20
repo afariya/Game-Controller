@@ -157,15 +157,13 @@ function loadModel(modelPath){
                     // WII CONTROLLER
                     else if(modelPath.includes("controller3")){
 
-                        material = new THREE.MeshStandardMaterial({
+                        // KEEP ORIGINAL MODEL COLORS/TEXTURES
+                        material = child.material;
 
-                            color:0xf5f5f5,
+                        // OPTIONAL MATERIAL SETTINGS
+                        material.metalness = 0.2;
 
-                            metalness:0.2,
-
-                            roughness:0.6
-
-                        });
+                        material.roughness = 0.6;
 
                     }
 
@@ -236,7 +234,7 @@ document.getElementById("controller1Btn").addEventListener("click", ()=>{
 
 
 
-// WII CONTROLLER
+// XBOX CONTROLLER
 document.getElementById("controller2Btn").addEventListener("click", ()=>{
 
     loadModel('models/controller2.glb');
@@ -251,17 +249,16 @@ document.getElementById("controller2Btn").addEventListener("click", ()=>{
 
 
 
-
-// // XBOX CONTROLLER
+// WII CONTROLLER
 document.getElementById("controller3Btn").addEventListener("click", ()=>{
 
     loadModel('models/controller3.glb');
 
     document.getElementById("model-title").innerText =
-    "Classic Controller";
+    "Wii Controller";
 
     document.getElementById("model-description").innerText =
-    "The original custom-designed controller concept developed for the 3D application.";
+    "A classic Nintendo Wii-inspired controller with motion gaming controls.";
 
 });
 
@@ -305,7 +302,6 @@ document.getElementById("lightBtn").addEventListener("click", ()=>{
     directionalLight.visible = !directionalLight.visible;
 
 });
-
 
 
 
@@ -355,6 +351,10 @@ window.addEventListener('resize', ()=>{
     renderer.setSize(window.innerWidth, window.innerHeight);
 
 });
+
+
+
+// BUTTON CLICK EFFECT
 $("button").click(function(){
 
     $(this).fadeOut(100).fadeIn(100);
